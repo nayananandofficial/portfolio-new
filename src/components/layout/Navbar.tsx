@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-white">
             <span className="bg-gradient-to-r from-[#c5ffb8] to-[#f2b8ff] bg-clip-text text-transparent">
-              Anantha
+              NaaN
             </span>
           </Link>
 

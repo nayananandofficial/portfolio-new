@@ -29,7 +29,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Hi, I'm{' '}
+                Hi, {'I\'m'}{' '}
                 <span className="bg-gradient-to-r from-[#c5ffb8] to-[#f2b8ff] bg-clip-text text-transparent">
                   Nayan Anand
                 </span>
@@ -81,8 +81,8 @@ export default function Hero() {
               <div className="glass-card p-4 rounded-3xl">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                   <Image
-                    src="/profile.jpg"
-                    alt="Ananthakrishnan AN"
+                    src="/profile.png"
+                    alt="Nayan Anand"
                     fill
                     className="object-cover"
                     priority
