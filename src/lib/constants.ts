@@ -58,6 +58,36 @@ export const PROJECTS: Project[] = [
       "Added LOD (Level of Detail) system for performance"
     ]
   },
+  {
+    id: "2",
+    slug: "speakmind",
+    title: "SpeakMind - Voice Assistant",
+    description: "Voice-controlled AI assistant for learning and communication",
+    longDescription: "SpeakMind is an AI-powered voice assistant designed to help students learn and communicate more effectively. It offers personalized learning paths.",
+    image: "/projects/speakmind.png",
+    images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
+    technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
+    category: "AI Application",
+    githubUrl: "https://github.com/yourusername/speakmind",
+    liveUrl: "https://speakmind.com",
+    features: [
+      "3D lab equipment with realistic physics",
+      "Chemical library with 100+ compounds",
+      "Volume and concentration calculations",
+      "Interactive user onboarding",
+      "Scoring system for experiments"
+    ],
+    challenges: [
+      "Implementing realistic liquid physics in 3D",
+      "Managing complex state across multiple components",
+      "Optimizing performance for low-end devices"
+    ],
+    solutions: [
+      "Used custom shaders for efficient liquid rendering",
+      "Implemented Zustand for centralized state management",
+      "Added LOD (Level of Detail) system for performance"
+    ]
+  }
   // Add more projects...
 ];
 
