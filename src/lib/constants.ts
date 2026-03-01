@@ -1,8 +1,12 @@
 import { Project, Service, Skill } from "@/types";
 import { FaReact, FaNode, FaDatabase, FaGitAlt } from "react-icons/fa";
-import { 
-  SiTypescript, SiTailwindcss, SiMongodb, 
-  SiPostgresql, SiFirebase, SiExpress
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiExpress,
 } from "react-icons/si";
 
 export const NAV_LINKS = [
@@ -32,62 +36,67 @@ export const PROJECTS: Project[] = [
     id: "1",
     slug: "reactron",
     title: "Reactron - Virtual Chemistry Lab",
-    description: "Interactive 3D chemistry lab built with ThreeJS",
-    longDescription: "Reactron is a comprehensive virtual chemistry laboratory that allows students to perform experiments in a safe, interactive 3D environment. Built with React Three Fiber, it features realistic physics simulations and a complete chemical library.",
+    description: "3D chemistry lab simulation built as part of a team project",
+    longDescription:
+      "Reactron is a virtual chemistry laboratory platform designed to simulate lab experiments in an interactive 3D environment. I contributed to Three.js integration and simulation optimization within a collaborative development team.",
     image: "/projects/reactron.jpg",
     images: ["/projects/reactron-1.jpg", "/projects/reactron-2.jpg"],
-    technologies: ["React", "Three.js", "React Three Fiber", "TypeScript", "Zustand"],
+    technologies: ["React", "Three.js", "React Three Fiber", "TypeScript"],
     category: "Web Application",
-    githubUrl: "https://github.com/yourusername/reactron",
-    liveUrl: "https://reactron.com",
+    githubUrl: "",
+    liveUrl: "",
     features: [
-      "3D lab equipment with realistic physics",
-      "Chemical library with 100+ compounds",
-      "Volume and concentration calculations",
-      "Interactive user onboarding",
-      "Scoring system for experiments"
+      "3D laboratory simulation environment",
+      "Interactive experiment workflows",
+      "Dynamic rendering of lab components",
     ],
     challenges: [
-      "Implementing realistic liquid physics in 3D",
-      "Managing complex state across multiple components",
-      "Optimizing performance for low-end devices"
+      "Integrating Three.js into an existing React architecture",
+      "Managing complex simulation state interactions",
+      "Improving rendering performance",
     ],
     solutions: [
-      "Used custom shaders for efficient liquid rendering",
-      "Implemented Zustand for centralized state management",
-      "Added LOD (Level of Detail) system for performance"
-    ]
+      "Refactored simulation components for better separation of concerns",
+      "Optimized rendering updates to reduce unnecessary re-renders",
+      "Improved state flow between UI and simulation layers",
+    ],
   },
   {
     id: "2",
     slug: "speakmind",
-    title: "SpeakMind - Voice Assistant",
-    description: "Voice-controlled AI assistant for learning and communication",
-    longDescription: "SpeakMind is an AI-powered voice assistant designed to help students learn and communicate more effectively. It offers personalized learning paths.",
+    title: "SpeakMind - AI Voice Assistant",
+    description: "AI-powered voice assistant with real-time speech interaction",
+    longDescription:
+      "SpeakMind is a voice-enabled AI assistant that integrates speech-to-text, large language models, and text-to-speech to enable interactive conversations. Built with a React frontend and Express backend.",
     image: "/projects/speakmind.png",
     images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
-    technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "OpenRouter API",
+      "SpeechSynthesis",
+    ],
     category: "AI Application",
-    githubUrl: "https://github.com/yourusername/speakmind",
-    liveUrl: "https://speakmind.com",
+    githubUrl: "",
+    liveUrl: "",
     features: [
-      "3D lab equipment with realistic physics",
-      "Chemical library with 100+ compounds",
-      "Volume and concentration calculations",
-      "Interactive user onboarding",
-      "Scoring system for experiments"
+      "Speech-to-text integration",
+      "LLM-powered responses",
+      "Text-to-speech output",
+      "Dynamic API-based response generation",
     ],
     challenges: [
-      "Implementing realistic liquid physics in 3D",
-      "Managing complex state across multiple components",
-      "Optimizing performance for low-end devices"
+      "Handling asynchronous voice processing",
+      "Managing API response latency",
+      "Structuring clean backend request flow",
     ],
     solutions: [
-      "Used custom shaders for efficient liquid rendering",
-      "Implemented Zustand for centralized state management",
-      "Added LOD (Level of Detail) system for performance"
-    ]
-  }
+      "Built modular service architecture for API calls",
+      "Implemented input validation and error handling",
+      "Optimized response flow for smoother interaction",
+    ],
+  },
   // Add more projects...
 ];
 
@@ -95,15 +104,16 @@ export const SERVICES: Service[] = [
   {
     id: "1",
     title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies",
+    description:
+      "Custom websites and web applications built with modern technologies",
     icon: "Code",
     features: [
       "Responsive design",
       "SEO optimization",
       "Performance tuning",
-      "Custom animations"
+      "Custom animations",
     ],
-    pricing: "Starting at $2000"
+    pricing: "Starting at $2000",
   },
   {
     id: "2",
@@ -114,9 +124,9 @@ export const SERVICES: Service[] = [
       "Scalable architecture",
       "Documentation",
       "Security best practices",
-      "Database integration"
+      "Database integration",
     ],
-    pricing: "Starting at $1500"
+    pricing: "Starting at $1500",
   },
   // Add more services...
 ];
