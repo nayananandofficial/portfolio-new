@@ -97,6 +97,50 @@ export const PROJECTS: Project[] = [
       "Optimized response flow for smoother interaction",
     ],
   },
+  {
+    id: "3",
+    slug: "southspice",
+    title: "SouthSpice - Restaurant Ordering System (Demo)",
+    description: "Restaurant Ordering System - Client Demo",
+    longDescription:
+      "A customizable restaurant ordering web application built as a client-ready demo. Simulates real-world ordering flows including menu browsing, cart management, and checkout interactions.",
+    image: "/projects/southspice.png",
+    images: ["/projects/southspice-1.png", "/projects/southspice-2.png"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Web Speech API",
+    ],
+    category: "Web Application UI(Demo)",
+    githubUrl: "https://github.com/Visuals-Smart-Tech/SOUTHSPICE.git",
+    liveUrl: "https://www.southspice.visualstech.in/",
+    features: [
+      "Dynamic restaurant and menu rendering(currently using mock data for demo)",
+      "Cart management with quantity updates and item aggregation",
+      "Interactive menu browsing and category filtering",
+      "Dynamic API-based response generation",
+      "Client-ready ordering flow UI (browse → add to cart → checkout screen)",
+      "Toast notifications for user interaction feedback",
+      "Responsive layout optimized for mobile and desktop",
+      "Codebase structured for future backend integration",
+    ],
+    challenges: [
+      "Designing scalable component architecture for future backend integration",
+      "Managing cart state across multiple routed pages",
+      "Avoiding unnecessary re-renders during cart updates",
+      "Structuring mock data to simulate real-world API responses",
+      "Maintaining clean UI state transitions between menu and checkout views",
+    ],
+    solutions: [
+      "Created modular reusable components for menus and cart logic",
+      "Implemented centralized cart state management pattern",
+      "Optimized rendering logic to reduce redundant updates",
+      "Designed data structures to mirror backend-ready API format",
+      "Separated presentation and logic layers for easier future expansion",
+    ],
+  },
   // Add more projects...
 ];
 
