@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
       "Dynamic restaurant and menu rendering(currently using mock data for demo)",
       "Cart management with quantity updates and item aggregation",
       "Interactive menu browsing and category filtering",
-      "Dynamic API-based response generation",
+      "Structured mock API responses to simulate backend data flow, allowing the UI architecture to transition easily to real endpoints.",
       "Client-ready ordering flow UI (browse → add to cart → checkout screen)",
       "Toast notifications for user interaction feedback",
       "Responsive layout optimized for mobile and desktop",
