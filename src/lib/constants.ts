@@ -34,71 +34,54 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: "1",
-    slug: "reactron",
-    title: "Reactron - Virtual Chemistry Lab",
-    description: "3D chemistry lab simulation built as part of a team project",
+    slug: "business-dashboard",
+    title: "Business Dashboard MVP",
+    description: "Internal Admin Dashboard - CRUD Workflow Demo",
     longDescription:
-      "Reactron is a virtual chemistry laboratory platform designed to simulate lab experiments in an interactive 3D environment. I contributed to Three.js integration and simulation optimization within a collaborative development team.",
-    image: "/projects/reactron.jpg",
-    images: ["/projects/reactron-1.jpg", "/projects/reactron-2.jpg"],
-    technologies: ["React", "Three.js", "React Three Fiber", "TypeScript"],
-    category: "Web Application",
-    githubUrl: "",
-    liveUrl: "",
+      "A lightweight internal business dashboard built to demonstrate a structured CRUD workflow for managing operational records. The project focuses on clean UI structure, predictable state management, and practical admin-tool design using modern frontend architecture.",
+
+    image: "/projects/business-dashboard.png",
+    images: [
+      "/projects/business-dashboard-1.jpg",
+      "/projects/business-dashboard-2.jpg",
+    ],
+
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+
+    category: "Web Application (Admin Dashboard)",
+
+    githubUrl: "https://github.com/nayananandofficial/business-dashboard.git",
+    liveUrl: "https://business-dashboard-neon-eight.vercel.app",
+
     features: [
-      "3D laboratory simulation environment",
-      "Interactive experiment workflows",
-      "Dynamic rendering of lab components",
+      "Dashboard interface displaying records in a structured table view",
+      "Create new records using a simple form workflow",
+      "Edit existing records with immediate UI updates",
+      "Delete records directly from the dashboard interface",
+      "Navigation between dashboard, create, and edit pages",
+      "Structured mock data layer simulating backend record management",
+      "Responsive layout optimized for desktop and tablet viewing",
+      "Clean UI focused on clarity and operational usability",
     ],
+
     challenges: [
-      "Integrating Three.js into an existing React architecture",
-      "Managing complex simulation state interactions",
-      "Improving rendering performance",
+      "Designing a clear CRUD workflow without relying on a backend API",
+      "Managing record state across dashboard, create, and edit views",
+      "Maintaining predictable UI updates when records change",
+      "Ensuring the interface remains readable and functional with minimal styling",
+      "Structuring the application so backend integration can be added later",
     ],
+
     solutions: [
-      "Refactored simulation components for better separation of concerns",
-      "Optimized rendering updates to reduce unnecessary re-renders",
-      "Improved state flow between UI and simulation layers",
+      "Implemented a centralized mock data layer to simulate record persistence",
+      "Designed a predictable component structure separating dashboard and form logic",
+      "Used controlled form inputs to maintain consistent record updates",
+      "Kept UI components modular for easier expansion when APIs are introduced",
+      "Maintained a minimal Tailwind-based design system for clarity and maintainability",
     ],
   },
   {
     id: "2",
-    slug: "speakmind",
-    title: "SpeakMind - AI Voice Assistant",
-    description: "AI-powered voice assistant with real-time speech interaction",
-    longDescription:
-      "SpeakMind is a voice-enabled AI assistant that integrates speech-to-text, large language models, and text-to-speech to enable interactive conversations. Built with a React frontend and Express backend.",
-    image: "/projects/speakmind.png",
-    images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "OpenRouter API",
-      "SpeechSynthesis",
-    ],
-    category: "AI Application",
-    githubUrl: "",
-    liveUrl: "",
-    features: [
-      "Speech-to-text integration",
-      "LLM-powered responses",
-      "Text-to-speech output",
-      "Dynamic API-based response generation",
-    ],
-    challenges: [
-      "Handling asynchronous voice processing",
-      "Managing API response latency",
-      "Structuring clean backend request flow",
-    ],
-    solutions: [
-      "Built modular service architecture for API calls",
-      "Implemented input validation and error handling",
-      "Optimized response flow for smoother interaction",
-    ],
-  },
-  {
-    id: "3",
     slug: "southspice",
     title: "SouthSpice - Restaurant Ordering System (Demo)",
     description: "Restaurant Ordering System - Client Demo",
@@ -141,6 +124,43 @@ export const PROJECTS: Project[] = [
       "Separated presentation and logic layers for easier future expansion",
     ],
   },
+  {
+    id: "3",
+    slug: "speakmind",
+    title: "SpeakMind - AI Voice Assistant",
+    description: "AI-powered voice assistant with real-time speech interaction",
+    longDescription:
+      "SpeakMind is a voice-enabled AI assistant that integrates speech-to-text, large language models, and text-to-speech to enable interactive conversations. Built with a React frontend and Express backend.",
+    image: "/projects/speakmind.png",
+    images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "OpenRouter API",
+      "SpeechSynthesis",
+    ],
+    category: "AI Application",
+    githubUrl: "",
+    liveUrl: "",
+    features: [
+      "Speech-to-text integration",
+      "LLM-powered responses",
+      "Text-to-speech output",
+      "Dynamic API-based response generation",
+    ],
+    challenges: [
+      "Handling asynchronous voice processing",
+      "Managing API response latency",
+      "Structuring clean backend request flow",
+    ],
+    solutions: [
+      "Built modular service architecture for API calls",
+      "Implemented input validation and error handling",
+      "Optimized response flow for smoother interaction",
+    ],
+  },
+
   // Add more projects...
 ];
 
