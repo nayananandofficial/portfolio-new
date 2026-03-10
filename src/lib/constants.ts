@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
       "SpeechSynthesis",
     ],
     category: "AI Application",
-    githubUrl: "",
+    githubUrl: "https://github.com/nayananandofficial/speakmind.git",
     liveUrl: "",
     features: [
       "Speech-to-text integration",
