@@ -12,9 +12,7 @@ import {
 export const NAV_LINKS = [
   { name: "Home", href: "/#home" },
   { name: "About", href: "/#about" },
-  { name: "Skills", href: "/#skills" },
   { name: "Projects", href: "/#projects" },
-  { name: "Services", href: "/#services" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -38,7 +36,7 @@ export const PROJECTS: Project[] = [
     title: "Business Dashboard MVP",
     description: "Internal Admin Dashboard - CRUD Workflow Demo",
     longDescription:
-      "Structured CRUD admin workflow built for managing internal operational records\nBuilt with Next.js and TypeScript to handle record creation, editing, deletion, and table-based management in a clean dashboard interface\nFocused on predictable state flow, reusable form patterns, and a frontend architecture that can transition smoothly into real backend integration\n\nFrontend:\nCRUD-oriented dashboard architecture\nReusable form and table workflow\nMock data layer prepared for API migration",
+      "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js + TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
 
     image: "/projects/business-dashboard.png",
     images: [
@@ -59,9 +57,9 @@ export const PROJECTS: Project[] = [
       "Page-based admin flow connecting dashboard, create, and edit views",
     ],
     enggdecs: [
-      "Organized record management around reusable form state and predictable update flow",
-      "Modeled mock data structures to mirror backend-ready CRUD behavior for easier API integration",
-      "Kept tables, forms, and navigation modular so the dashboard can scale without coupling UI concerns",
+      "Centralized form state for predictable record updates",
+      "Modeled data structures to match backend-ready CRUD patterns",
+      "Kept UI components modular to enable future API integration",
     ],
   },
   {
@@ -70,7 +68,7 @@ export const PROJECTS: Project[] = [
     title: "SouthSpice - Restaurant Ordering System (Demo)",
     description: "Restaurant Ordering System - Client Demo",
     longDescription:
-      "Client-ready restaurant ordering flow designed to simulate a real digital ordering experience\nBuilt with React and TypeScript to support menu browsing, cart interactions, and checkout progression across a responsive interface\nStructured the frontend around reusable ordering state and backend-like mock data so the demo can evolve into a production-connected system\n\nFrontend:\nMenu browsing to checkout pipeline\nResponsive cart and ordering flow\nMock API-style data setup for future backend integration",
+      "Restaurant ordering system simulating real-world menu → cart → checkout flow\nBuilt with React + TypeScript using structured state management for order handling\nDesigned mock API layer and reusable data models to mirror production backend behavior",
     image: "/projects/southspice.png",
     images: ["/projects/southspice-1.png", "/projects/southspice-2.png"],
     technologies: [
@@ -89,9 +87,9 @@ export const PROJECTS: Project[] = [
       "End-to-end ordering flow from menu selection to checkout screen",
     ],
     enggdecs: [
-      "Centralized cart state to keep item updates, totals, and checkout data consistent across the interface",
-      "Structured mock menu and API response data to resemble backend contracts for smoother future integration",
-      "Designed responsive layouts and interaction feedback to support a stable ordering flow on mobile and desktop",
+      "Centralized cart state to maintain consistent order data across views",
+      "Structured mock API responses to match backend-ready contracts",
+      "Designed responsive layout to support stable ordering across devices"
     ],
   },
   {

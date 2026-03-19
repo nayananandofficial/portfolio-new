@@ -89,23 +89,6 @@ export default function Hero() {
                   />
                 </div>
               </div>
-              
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 glass-card px-4 py-2 rounded-full"
-              >
-                <span className="text-white font-semibold">5+ Years</span>
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-4 -left-4 glass-card px-4 py-2 rounded-full"
-              >
-                <span className="text-white font-semibold">50+ Projects</span>
-              </motion.div>
             </motion.div>
           </div>
 
