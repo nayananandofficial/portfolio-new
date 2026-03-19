@@ -11,8 +11,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   features: string[];
-  challenges: string[];
-  solutions: string[];
+  enggdecs: string[];
 }
 
 export interface Service {

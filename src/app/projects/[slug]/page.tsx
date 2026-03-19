@@ -88,7 +88,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               {project.title}
             </h1>
 
-            <p className="text-xl text-white/70 mb-8 leading-relaxed">
+            <p className="text-xl text-white/70 mb-8 leading-relaxed whitespace-pre-line">
               {project.longDescription}
             </p>
 
@@ -155,10 +155,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             {/* Additional Images */}
             <div className="lg:col-span-2 space-y-4">
               {project.images?.map((image, index) => (
-                <div
-                  key={index}
-                  className="glass-card p-4 rounded-2xl"
-                >
+                <div key={index} className="glass-card p-4 rounded-2xl">
                   <div className="relative h-[300px] rounded-xl overflow-hidden">
                     <Image
                       src={image}
@@ -173,52 +170,45 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
 
           {/* Features */}
-          <div className="glass-card p-8 md:p-12 rounded-3xl mb-8">
-            <h2 className="text-3xl font-bold text-white mb-8">
-              Key Features
-            </h2>
-            <ul className="space-y-4">
-              {project.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#c5ffb8] to-[#f2b8ff] flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-gray-900 text-sm font-bold">
-                      {index + 1}
+          {project.features.length > 0 && (
+            <div className="glass-card p-8 md:p-12 rounded-3xl mb-8">
+              <h2 className="text-3xl font-bold text-white mb-8">
+                Key Features
+              </h2>
+              <ul className="space-y-4">
+                {project.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#c5ffb8] to-[#f2b8ff] flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-gray-900 text-sm font-bold">
+                        {index + 1}
+                      </span>
                     </span>
-                  </span>
-                  <span className="text-white/80 text-lg">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Challenges & Solutions */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-card p-8 rounded-3xl">
-              <h2 className="text-3xl font-bold text-white mb-8">
-                Challenges
-              </h2>
-              <ul className="space-y-4">
-                {project.challenges.map((challenge, index) => (
-                  <li key={index} className="text-white/70 leading-relaxed">
-                    • {challenge}
+                    <span className="text-white/80 text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
+          )}
 
-            <div className="glass-card p-8 rounded-3xl">
-              <h2 className="text-3xl font-bold text-white mb-8">
-                Solutions
-              </h2>
-              <ul className="space-y-4">
-                {project.solutions.map((solution, index) => (
-                  <li key={index} className="text-white/70 leading-relaxed">
-                    • {solution}
-                  </li>
-                ))}
-              </ul>
+          {/* Engineering Decisions */}
+          {(project.enggdecs.length > 0) && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.enggdecs.length > 0 && (
+                <div className="glass-card p-8 rounded-3xl">
+                  <h2 className="text-3xl font-bold text-white mb-8">
+                    Engineering Decisions
+                  </h2>
+                  <ul className="space-y-4">
+                    {project.enggdecs.map((enggdec, index) => (
+                      <li key={index} className="text-white/70 leading-relaxed">
+                        - {enggdec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

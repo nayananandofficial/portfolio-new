@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     title: "Business Dashboard MVP",
     description: "Internal Admin Dashboard - CRUD Workflow Demo",
     longDescription:
-      "A lightweight internal business dashboard built to demonstrate a structured CRUD workflow for managing operational records. The project focuses on clean UI structure, predictable state management, and practical admin-tool design using modern frontend architecture.",
+      "Structured CRUD admin workflow built for managing internal operational records\nBuilt with Next.js and TypeScript to handle record creation, editing, deletion, and table-based management in a clean dashboard interface\nFocused on predictable state flow, reusable form patterns, and a frontend architecture that can transition smoothly into real backend integration\n\nFrontend:\nCRUD-oriented dashboard architecture\nReusable form and table workflow\nMock data layer prepared for API migration",
 
     image: "/projects/business-dashboard.png",
     images: [
@@ -54,30 +54,14 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://business-dashboard-neon-eight.vercel.app",
 
     features: [
-      "Dashboard interface displaying records in a structured table view",
-      "Create new records using a simple form workflow",
-      "Edit existing records with immediate UI updates",
-      "Delete records directly from the dashboard interface",
-      "Navigation between dashboard, create, and edit pages",
-      "Structured mock data layer simulating backend record management",
-      "Responsive layout optimized for desktop and tablet viewing",
-      "Clean UI focused on clarity and operational usability",
+      "Dashboard table view for structured operational record management",
+      "Create, edit, and delete workflows with immediate UI updates",
+      "Page-based admin flow connecting dashboard, create, and edit views",
     ],
-
-    challenges: [
-      "Designing a clear CRUD workflow without relying on a backend API",
-      "Managing record state across dashboard, create, and edit views",
-      "Maintaining predictable UI updates when records change",
-      "Ensuring the interface remains readable and functional with minimal styling",
-      "Structuring the application so backend integration can be added later",
-    ],
-
-    solutions: [
-      "Implemented a centralized mock data layer to simulate record persistence",
-      "Designed a predictable component structure separating dashboard and form logic",
-      "Used controlled form inputs to maintain consistent record updates",
-      "Kept UI components modular for easier expansion when APIs are introduced",
-      "Maintained a minimal Tailwind-based design system for clarity and maintainability",
+    enggdecs: [
+      "Organized record management around reusable form state and predictable update flow",
+      "Modeled mock data structures to mirror backend-ready CRUD behavior for easier API integration",
+      "Kept tables, forms, and navigation modular so the dashboard can scale without coupling UI concerns",
     ],
   },
   {
@@ -86,7 +70,7 @@ export const PROJECTS: Project[] = [
     title: "SouthSpice - Restaurant Ordering System (Demo)",
     description: "Restaurant Ordering System - Client Demo",
     longDescription:
-      "A customizable restaurant ordering web application built as a client-ready demo. Simulates real-world ordering flows including menu browsing, cart management, and checkout interactions.",
+      "Client-ready restaurant ordering flow designed to simulate a real digital ordering experience\nBuilt with React and TypeScript to support menu browsing, cart interactions, and checkout progression across a responsive interface\nStructured the frontend around reusable ordering state and backend-like mock data so the demo can evolve into a production-connected system\n\nFrontend:\nMenu browsing to checkout pipeline\nResponsive cart and ordering flow\nMock API-style data setup for future backend integration",
     image: "/projects/southspice.png",
     images: ["/projects/southspice-1.png", "/projects/southspice-2.png"],
     technologies: [
@@ -100,28 +84,14 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Visuals-Smart-Tech/SOUTHSPICE.git",
     liveUrl: "https://www.southspice.visualstech.in/",
     features: [
-      "Dynamic restaurant and menu rendering(currently using mock data for demo)",
-      "Cart management with quantity updates and item aggregation",
-      "Interactive menu browsing and category filtering",
-      "Structured mock API responses to simulate backend data flow, allowing the UI architecture to transition easily to real endpoints.",
-      "Client-ready ordering flow UI (browse → add to cart → checkout screen)",
-      "Toast notifications for user interaction feedback",
-      "Responsive layout optimized for mobile and desktop",
-      "Codebase structured for future backend integration",
+      "Dynamic menu browsing with category-based restaurant item discovery",
+      "Cart management with quantity updates and aggregated order state",
+      "End-to-end ordering flow from menu selection to checkout screen",
     ],
-    challenges: [
-      "Designing scalable component architecture for future backend integration",
-      "Managing cart state across multiple routed pages",
-      "Avoiding unnecessary re-renders during cart updates",
-      "Structuring mock data to simulate real-world API responses",
-      "Maintaining clean UI state transitions between menu and checkout views",
-    ],
-    solutions: [
-      "Created modular reusable components for menus and cart logic",
-      "Implemented centralized cart state management pattern",
-      "Optimized rendering logic to reduce redundant updates",
-      "Designed data structures to mirror backend-ready API format",
-      "Separated presentation and logic layers for easier future expansion",
+    enggdecs: [
+      "Centralized cart state to keep item updates, totals, and checkout data consistent across the interface",
+      "Structured mock menu and API response data to resemble backend contracts for smoother future integration",
+      "Designed responsive layouts and interaction feedback to support a stable ordering flow on mobile and desktop",
     ],
   },
   {
@@ -130,7 +100,7 @@ export const PROJECTS: Project[] = [
     title: "SpeakMind - AI Voice Assistant",
     description: "AI-powered voice assistant with real-time speech interaction",
     longDescription:
-      "SpeakMind is a voice-enabled AI assistant that integrates speech-to-text, large language models, and text-to-speech to enable interactive conversations. Built with a React frontend and Express backend.",
+      "Real-time voice interaction system handling STT â†’ LLM â†’ TTS pipeline \n Built a Node.js + Express backend to process async voice requests and manage response flow\n Engineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks\n\n Backend:\n API-based architecture\n Route: /api/voice\n Validation & error handling implemented",
     image: "/projects/speakmind.png",
     images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
     technologies: [
@@ -144,20 +114,14 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/nayananandofficial/speakmind.git",
     liveUrl: "",
     features: [
-      "Speech-to-text integration",
-      "LLM-powered responses",
-      "Text-to-speech output",
-      "Dynamic API-based response generation",
+      "Real-time speech â†’ AI â†’ voice response pipeline",
+      "Async request handling with controlled response flow",
+      "Modular backend architecture for scalable API integration",
     ],
-    challenges: [
-      "Handling asynchronous voice processing",
-      "Managing API response latency",
-      "Structuring clean backend request flow",
-    ],
-    solutions: [
-      "Built modular service architecture for API calls",
-      "Implemented input validation and error handling",
-      "Optimized response flow for smoother interaction",
+    enggdecs: [
+      "Designed async flow to handle speech input and API latency without blocking UI",
+      "Structured backend into modular services for clean API orchestration",
+      "Managed frontend state transitions for listening, processing, and playback phases",
     ],
   },
 
