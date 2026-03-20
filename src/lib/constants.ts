@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     id: "1",
     slug: "business-dashboard",
     title: "Business Dashboard MVP",
-    description: "Internal dashboard for managing records with a clean CRUD workflow.",
+    description: "Admin dashboard for structured CRUD workflows and internal data management.",
     longDescription:
       "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
     image: "/projects/business-dashboard.png",
@@ -48,7 +48,7 @@ export const PROJECTS: Project[] = [
     id: "2",
     slug: "southspice",
     title: "SouthSpice - Restaurant Ordering System (Demo)",
-    description: "Restaurant ordering demo focused on menu flow, cart logic, and checkout UX.",
+    description: "Restaurant ordering system with cart state management and backend-ready architecture.",
     longDescription:
       "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
     image: "/projects/southspice.png",
@@ -78,7 +78,7 @@ export const PROJECTS: Project[] = [
     id: "3",
     slug: "speakmind",
     title: "SpeakMind - AI Voice Assistant",
-    description: "Voice-first AI assistant connecting speech input, model response, and playback.",
+    description: "Voice AI assistant with real-time speech processing, async API handling, and response orchestration.",
     longDescription:
       "Real-time voice interaction system handling speech-to-text, LLM processing, and text-to-speech output\nBuilt with a Node.js and Express backend to process async voice requests and manage response flow\nEngineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks",
     image: "/projects/speakmind.png",

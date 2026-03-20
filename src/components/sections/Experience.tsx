@@ -1,5 +1,5 @@
 const experienceItems = [
-  'Built full-stack applications across admin dashboards, restaurant ordering flows, and AI product interfaces.',
+  'Built full-stack applications including admin dashboards, ordering systems, and AI interfaces.',
   'Designed API layers, async request handling, reusable data models, and validation-driven backend workflows.',
   'Deployed working systems and integrated modern data platforms including PostgreSQL, Supabase, and backend-ready mock contracts.',
 ];

@@ -33,8 +33,7 @@ export default function Hero() {
             </h1>
             <p className="text-lg text-white/80">Full Stack Developer</p>
             <p className="text-base text-white/65 max-w-2xl mx-auto">
-              I build end-to-end web applications with clean frontend systems,
-              practical backend architecture, and deployment-ready data flows.
+              I build production-ready web apps with clean architecture, scalable APIs, and real-world workflows.
             </p>
           </div>
 
