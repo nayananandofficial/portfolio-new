@@ -13,22 +13,6 @@ export interface Project {
   features: string[];
   enggdecs: string[];
 }
-
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  features: string[];
-  pricing?: string;
-}
-
-export interface Skill {
-  name: string;
-  icon: string;
-  category: 'frontend' | 'backend' | 'database' | 'tools';
-}
-
 export interface NavLink {
   name: string;
   href: string;

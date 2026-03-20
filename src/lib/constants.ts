@@ -1,13 +1,4 @@
-import { Project, Service, Skill } from "@/types";
-import { FaReact, FaNode, FaDatabase, FaGitAlt } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiPostgresql,
-  SiFirebase,
-  SiExpress,
-} from "react-icons/si";
+import { Project } from "@/types";
 
 export const NAV_LINKS = [
   { name: "Home", href: "/#home" },
@@ -16,41 +7,32 @@ export const NAV_LINKS = [
   { name: "Contact", href: "/#contact" },
 ];
 
-export const SKILLS: Skill[] = [
-  { name: "React", icon: "FaReact", category: "frontend" },
-  { name: "TypeScript", icon: "SiTypescript", category: "frontend" },
-  { name: "Tailwind CSS", icon: "SiTailwindcss", category: "frontend" },
-  { name: "Node.js", icon: "FaNode", category: "backend" },
-  { name: "Express", icon: "SiExpress", category: "backend" },
-  { name: "MongoDB", icon: "SiMongodb", category: "database" },
-  { name: "PostgreSQL", icon: "SiPostgresql", category: "database" },
-  { name: "Firebase", icon: "SiFirebase", category: "database" },
-  { name: "Supabase", icon: "SiSupabase", category: "database" },
-  { name: "Git", icon: "FaGitAlt", category: "tools" },
-];
+export const CONTACT_EMAIL = "anandanayanofficial@gmail.com";
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/in/nayan-b-anand-15bb881a2/",
+  github: "https://github.com/nayananandofficial/",
+  x: "https://x.com/NayanAnand95879",
+  instagram: "https://www.instagram.com/nayan__anand/",
+};
 
 export const PROJECTS: Project[] = [
   {
     id: "1",
     slug: "business-dashboard",
     title: "Business Dashboard MVP",
-    description: "Internal Admin Dashboard - CRUD Workflow Demo",
+    description: "Internal dashboard for managing records with a clean CRUD workflow.",
     longDescription:
-      "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js + TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
-
+      "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
     image: "/projects/business-dashboard.png",
     images: [
       "/projects/business-dashboard-1.jpg",
       "/projects/business-dashboard-2.jpg",
     ],
-
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-
     category: "Web Application (Admin Dashboard)",
-
     githubUrl: "https://github.com/nayananandofficial/business-dashboard.git",
     liveUrl: "https://business-dashboard-neon-eight.vercel.app",
-
     features: [
       "Dashboard table view for structured operational record management",
       "Create, edit, and delete workflows with immediate UI updates",
@@ -66,9 +48,9 @@ export const PROJECTS: Project[] = [
     id: "2",
     slug: "southspice",
     title: "SouthSpice - Restaurant Ordering System (Demo)",
-    description: "Restaurant Ordering System - Client Demo",
+    description: "Restaurant ordering demo focused on menu flow, cart logic, and checkout UX.",
     longDescription:
-      "Restaurant ordering system simulating real-world menu → cart → checkout flow\nBuilt with React + TypeScript using structured state management for order handling\nDesigned mock API layer and reusable data models to mirror production backend behavior",
+      "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
     image: "/projects/southspice.png",
     images: ["/projects/southspice-1.png", "/projects/southspice-2.png"],
     technologies: [
@@ -78,7 +60,7 @@ export const PROJECTS: Project[] = [
       "Framer Motion",
       "Web Speech API",
     ],
-    category: "Web Application UI(Demo)",
+    category: "Web Application UI (Demo)",
     githubUrl: "https://github.com/Visuals-Smart-Tech/SOUTHSPICE.git",
     liveUrl: "https://www.southspice.visualstech.in/",
     features: [
@@ -89,16 +71,16 @@ export const PROJECTS: Project[] = [
     enggdecs: [
       "Centralized cart state to maintain consistent order data across views",
       "Structured mock API responses to match backend-ready contracts",
-      "Designed responsive layout to support stable ordering across devices"
+      "Designed responsive layout to support stable ordering across devices",
     ],
   },
   {
     id: "3",
     slug: "speakmind",
     title: "SpeakMind - AI Voice Assistant",
-    description: "AI-powered voice assistant with real-time speech interaction",
+    description: "Voice-first AI assistant connecting speech input, model response, and playback.",
     longDescription:
-      "Real-time voice interaction system handling STT â†’ LLM â†’ TTS pipeline \n Built a Node.js + Express backend to process async voice requests and manage response flow\n Engineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks\n\n Backend:\n API-based architecture\n Route: /api/voice\n Validation & error handling implemented",
+      "Real-time voice interaction system handling speech-to-text, LLM processing, and text-to-speech output\nBuilt with a Node.js and Express backend to process async voice requests and manage response flow\nEngineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks",
     image: "/projects/speakmind.png",
     images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
     technologies: [
@@ -112,7 +94,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/nayananandofficial/speakmind.git",
     liveUrl: "",
     features: [
-      "Real-time speech â†’ AI â†’ voice response pipeline",
+      "Real-time speech to AI to voice response pipeline",
       "Async request handling with controlled response flow",
       "Modular backend architecture for scalable API integration",
     ],
@@ -122,37 +104,4 @@ export const PROJECTS: Project[] = [
       "Managed frontend state transitions for listening, processing, and playback phases",
     ],
   },
-
-  // Add more projects...
-];
-
-export const SERVICES: Service[] = [
-  {
-    id: "1",
-    title: "Web Development",
-    description:
-      "Custom websites and web applications built with modern technologies",
-    icon: "Code",
-    features: [
-      "Responsive design",
-      "SEO optimization",
-      "Performance tuning",
-      "Custom animations",
-    ],
-    pricing: "Starting at $2000",
-  },
-  {
-    id: "2",
-    title: "API Development",
-    description: "RESTful and GraphQL APIs for your applications",
-    icon: "Server",
-    features: [
-      "Scalable architecture",
-      "Documentation",
-      "Security best practices",
-      "Database integration",
-    ],
-    pricing: "Starting at $1500",
-  },
-  // Add more services...
 ];
