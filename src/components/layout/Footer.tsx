@@ -1,55 +1,61 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import { CONTACT_EMAIL, SOCIAL_LINKS } from '@/lib/constants';
+
+const socialLinks = [
+  { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, Icon: Linkedin },
+  { label: 'GitHub', href: SOCIAL_LINKS.github, Icon: Github },
+  { label: 'X', href: SOCIAL_LINKS.x, Icon: Twitter },
+  { label: 'Instagram', href: SOCIAL_LINKS.instagram, Icon: Instagram },
+];
 
 export default function Footer() {
   return (
-    <footer className="glass-card mx-4 mb-4 px-6 py-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* About */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Ananthakrishnan AN</h3>
-            <p className="text-white/70">
-              Full Stack Developer passionate about creating beautiful and functional web experiences.
+    <footer className="py-10 px-4">
+      <div className="glass-card max-w-4xl mx-auto px-4 py-6 rounded-2xl">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <p className="text-white font-semibold">Nayan Anand</p>
+            <p className="text-sm text-white/60">
+              Building focused full-stack products with clean frontend,
+              backend, and data workflows.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link href="#about" className="text-white/70 hover:text-white">About</Link></li>
-              <li><Link href="#projects" className="text-white/70 hover:text-white">Projects</Link></li>
-              <li><Link href="#contact" className="text-white/70 hover:text-white">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
-                 className="text-white/70 hover:text-white transition-colors">
-                <Github size={24} />
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-white/65">
+              <Link href="/#about" className="hover:text-[#9fe870]">
+                About
+              </Link>
+              <Link href="/#projects" className="hover:text-[#9fe870]">
+                Projects
+              </Link>
+              <Link href="/#contact" className="hover:text-[#9fe870]">
+                Contact
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-white/65 hover:text-[#9fe870]"
+                aria-label="Email"
+              >
+                <Mail size={18} />
               </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
-                 className="text-white/70 hover:text-white transition-colors">
-                <Linkedin size={24} />
-              </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"
-                 className="text-white/70 hover:text-white transition-colors">
-                <Twitter size={24} />
-              </a>
-              <a href="mailto:your@email.com"
-                 className="text-white/70 hover:text-white transition-colors">
-                <Mail size={24} />
-              </a>
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/65 hover:text-[#9fe870]"
+                  aria-label={label}
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p>&copy; {new Date().getFullYear()} Ananthakrishnan AN. All rights reserved.</p>
         </div>
       </div>
     </footer>
