@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="glass-card max-w-4xl mx-auto px-4 py-3 rounded-2xl">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-base font-semibold text-white">
-              Nayan Anand
+              NBA
             </Link>
 
             <div className="hidden md:flex items-center gap-6">

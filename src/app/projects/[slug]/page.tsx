@@ -62,7 +62,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     image: project.image,
     author: {
       '@type': 'Person',
-      name: 'Ananthakrishnan AN',
+      name: 'Nayan B Anand',
     },
     url: `https://your-domain.com/projects/${project.slug}`,
   };

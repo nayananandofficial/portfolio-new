@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
-  title: "Nayan Anand",
-  description: "Made with Next.js with love by Nayan Anand",
+  title: "Nayan B Anand",
+  description: "Made with Next.js with ❤️",
 };
 
 export default function RootLayout({

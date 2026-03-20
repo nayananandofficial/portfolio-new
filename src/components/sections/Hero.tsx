@@ -14,7 +14,7 @@ const techStack = [
 
 export default function Hero() {
   return (
-    <section id="home" className="py-16 pt-32">
+    <section id="home" className="py-12 pt-32">
       <div className="max-w-4xl mx-auto px-4">
         <div className="glass-card rounded-3xl px-6 py-12 md:px-10 text-center">
           <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border border-white/10">
@@ -29,7 +29,7 @@ export default function Hero() {
 
           <div className="space-y-3">
             <h1 className="text-4xl md:text-5xl font-semibold text-white">
-              Nayan Anand
+              Nayan B Anand
             </h1>
             <p className="text-lg text-white/80">Full Stack Developer</p>
             <p className="text-base text-white/65 max-w-2xl mx-auto">
