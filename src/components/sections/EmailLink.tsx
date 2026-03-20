@@ -1,0 +1,186 @@
+'use client';
+
+import { useEffect, useReducer, useRef, useState } from 'react';
+import { CONTACT_EMAIL } from '@/lib/constants';
+
+const ANIMATION_TICK_MS = 50;
+const HOLD_TICKS_AFTER_MESSAGE = 28;
+const emailParts = CONTACT_EMAIL.split('@');
+const localPart = emailParts[0] ?? '';
+const domainPart = emailParts[1] ?? 'gmail.com';
+const messages = [localPart];
+
+function validateText(text: string): boolean {
+  const re =
+    /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))$/;
+  return re.test(text) || text.length === 0;
+}
+
+function prefersReducedMotion(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function useInterval(callback: () => void, delay: number | null) {
+  const savedCallback = useRef<() => void>(callback);
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    if (!delay) {
+      return;
+    }
+
+    const id = setInterval(() => savedCallback.current(), delay);
+    return () => clearInterval(id);
+  }, [delay]);
+}
+
+interface AnimationState {
+  idx: number;
+  message: string;
+  char: number;
+  isActive: boolean;
+}
+
+type AnimationAction =
+  | { type: 'TICK'; loopMessage: boolean; hold: number }
+  | { type: 'PAUSE' }
+  | { type: 'RESUME'; maxIdx: number };
+
+function animationReducer(
+  state: AnimationState,
+  action: AnimationAction
+): AnimationState {
+  switch (action.type) {
+    case 'TICK': {
+      let newIdx = state.idx;
+      let newChar = state.char;
+
+      if (state.char - action.hold >= messages[state.idx].length) {
+        newIdx += 1;
+        newChar = 0;
+      }
+
+      if (newIdx === messages.length) {
+        if (action.loopMessage) {
+          return {
+            idx: 0,
+            message: '',
+            char: 0,
+            isActive: true,
+          };
+        }
+
+        return {
+          ...state,
+          isActive: false,
+          message: messages[messages.length - 1],
+        };
+      }
+
+      return {
+        idx: newIdx,
+        message: messages[newIdx].slice(0, newChar),
+        char: newChar + 1,
+        isActive: true,
+      };
+    }
+    case 'PAUSE':
+      return { ...state, isActive: false };
+    case 'RESUME':
+      return {
+        ...state,
+        isActive: state.idx < action.maxIdx,
+      };
+    default:
+      return state;
+  }
+}
+
+interface EmailLinkProps {
+  loopMessage?: boolean;
+}
+
+export default function EmailLink({ loopMessage = false }: EmailLinkProps) {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(prefersReducedMotion());
+  }, []);
+
+  const [state, dispatch] = useReducer(animationReducer, {
+    idx: 0,
+    message: '',
+    char: 0,
+    isActive: true,
+  });
+
+  useEffect(() => {
+    if (reducedMotion) {
+      dispatch({ type: 'PAUSE' });
+    }
+  }, [reducedMotion]);
+
+  useInterval(
+    () => {
+      dispatch({
+        type: 'TICK',
+        loopMessage,
+        hold: HOLD_TICKS_AFTER_MESSAGE,
+      });
+    },
+    state.isActive && !reducedMotion ? ANIMATION_TICK_MS : null
+  );
+
+  const displayMessage =
+    reducedMotion || state.message === '' ? localPart : state.message;
+  const isValid = validateText(displayMessage);
+
+  const handlePause = () => dispatch({ type: 'PAUSE' });
+
+  const handleResume = () => {
+    if (!reducedMotion) {
+      dispatch({ type: 'RESUME', maxIdx: messages.length });
+    }
+  };
+
+  const emailContent = (
+    <>
+      <span className="contact-email-prefix">{displayMessage}</span>
+      <span className="contact-email-domain">@{domainPart}</span>
+    </>
+  );
+
+  return (
+    <div
+      className="contact-email-container"
+      onMouseEnter={handlePause}
+      onMouseLeave={handleResume}
+    >
+      {isValid ? (
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="contact-email-link"
+          onFocus={handlePause}
+          onBlur={handleResume}
+        >
+          {emailContent}
+        </a>
+      ) : (
+        <span
+          className="contact-email-link contact-email-link--invalid"
+          aria-disabled="true"
+          tabIndex={-1}
+        >
+          {emailContent}
+        </span>
+      )}
+    </div>
+  );
+}
