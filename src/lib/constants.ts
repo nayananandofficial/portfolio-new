@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
       "Trello-style Kanban system with real-time persistence and structured state management.",
     longDescription:
       "Trello-style Kanban task manager supporting Boards → Lists → Cards → Subtasks with persistent backend storage.\nBuilt using React (Vite) and Supabase (PostgreSQL) with a layered architecture (UI → Context → Services → DB).\nImplements drag-and-drop task management, optimistic UI updates, and normalized relational data models for scalable workflows.",
-    video: {url: "/videos/FluxoBoardVid.mp4", poster: "/images/fluxoPoster.png"},
+    video: {url: "/videos/Fluxoboardvid.mp4", poster: "/images/fluxoPoster.png"},
     image: "/images/fluxo.png",
     images: [
       "/images/fluxo1.png",
