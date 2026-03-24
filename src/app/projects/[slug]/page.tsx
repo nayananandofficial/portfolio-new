@@ -36,6 +36,10 @@ export async function generateMetadata({
       title: project.title,
       description: project.description,
       images: [project.image],
+      videos: project.video?.url ? {
+        url: project.video.url,
+        type: 'video/mp4',
+      } : undefined,
       type: 'article',
     },
   };
@@ -62,6 +66,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     name: project.title,
     description: project.description,
     image: project.image,
+    video: project.video?.url,
     author: {
       '@type': 'Person',
       name: 'Nayan B Anand',
@@ -136,12 +141,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.65fr),minmax(280px,1fr)] gap-5 items-start">
             <div className="glass-card rounded-2xl p-3">
               <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  priority
-                  className="object-cover"
+                <video
+                  src={project.video?.url || ''}
+                  poster={project.video?.poster || project.image}
+                  autoPlay
+                  loop
+                  muted
+                  className="object-cover w-full h-full"
                 />
               </div>
             </div>
