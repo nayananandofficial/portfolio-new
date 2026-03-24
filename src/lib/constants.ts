@@ -18,16 +18,49 @@ export const SOCIAL_LINKS = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "4",
+    slug: "adaptive-task-manager",
+    title: "Adaptive Task Manager",
+    description:
+      "Trello-style Kanban system with real-time persistence and structured state management.",
+    longDescription:
+      "Trello-style Kanban task manager supporting Boards → Lists → Cards → Subtasks with persistent backend storage.\nBuilt using React (Vite) and Supabase (PostgreSQL) with a layered architecture (UI → Context → Services → DB).\nImplements drag-and-drop task management, optimistic UI updates, and normalized relational data models for scalable workflows.",
+    video: {url: "/videos/FluxoBoardVid.mp4", poster: "/images/fluxoPoster.png"},
+    image: "/images/fluxo.png",
+    images: [
+      "/images/fluxo1.png",
+      "/images/fluxo2.png",
+    ],
+    technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
+    category: "Full Stack Web Application",
+    githubUrl: "https://github.com/nayananandofficial/Adaptive_Task_Manager",
+    liveUrl: "https://fluxoboard.vercel.app/",
+    features: [
+      "Authentication with onboarding and role-based workspace",
+      "Kanban board with Boards → Lists → Cards → Subtasks hierarchy",
+      "Drag-and-drop task management with persistent ordering",
+      "Card detail panel with labels, due dates, and subtasks",
+    ],
+    enggdecs: [
+      "Designed layered architecture (UI → Context → Services → Database) for maintainable state flow",
+      "Implemented drag-and-drop with position reindexing and database persistence",
+      "Built normalized relational schema in PostgreSQL for boards, lists, cards, and subtasks",
+      "Integrated Supabase Auth with fallback mode for development resilience"
+    ],
+  },
+  {
     id: "1",
     slug: "business-dashboard",
     title: "Business Dashboard MVP",
-    description: "Admin dashboard for structured CRUD workflows and internal data management.",
+    description:
+      "Admin dashboard for structured CRUD workflows and internal data management.",
     longDescription:
       "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
-    image: "/projects/business-dashboard.png",
+    image: "/images/business-dashboard.png",
+    video: {url: "", poster: ""},
     images: [
-      "/projects/business-dashboard-1.jpg",
-      "/projects/business-dashboard-2.jpg",
+      "/images/business-dashboard-1.jpg",
+      "/images/business-dashboard-2.jpg",
     ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     category: "Web Application (Admin Dashboard)",
@@ -48,11 +81,13 @@ export const PROJECTS: Project[] = [
     id: "2",
     slug: "southspice",
     title: "SouthSpice - Restaurant Ordering System (Demo)",
-    description: "Restaurant ordering system with cart state management and backend-ready architecture.",
+    description:
+      "Restaurant ordering system with cart state management and backend-ready architecture.",
     longDescription:
       "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
-    image: "/projects/southspice.png",
-    images: ["/projects/southspice-1.png", "/projects/southspice-2.png"],
+    video: {url: "", poster: ""},
+    image: "/images/southspice.png",
+    images: ["/images/southspice-1.png", "/images/southspice-2.png"],
     technologies: [
       "React",
       "TypeScript",
@@ -78,11 +113,13 @@ export const PROJECTS: Project[] = [
     id: "3",
     slug: "speakmind",
     title: "SpeakMind - AI Voice Assistant",
-    description: "Voice AI assistant with real-time speech processing, async API handling, and response orchestration.",
+    description:
+      "Voice AI assistant with real-time speech processing, async API handling, and response orchestration.",
     longDescription:
       "Real-time voice interaction system handling speech-to-text, LLM processing, and text-to-speech output\nBuilt with a Node.js and Express backend to process async voice requests and manage response flow\nEngineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks",
-    image: "/projects/speakmind.png",
-    images: ["/projects/speakmind-1.png", "/projects/speakmind-2.jpg"],
+    video: {url: "", poster: ""},
+    image: "/images/speakmind.png",
+    images: ["/images/speakmind-1.png", "/images/speakmind-2.jpg"],
     technologies: [
       "React",
       "Node.js",

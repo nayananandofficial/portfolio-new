@@ -6,6 +6,11 @@ export interface Project {
   longDescription: string;
   image: string;
   images: string[];
+  video?: {
+    url: string
+    poster?: string
+    duration?: number
+  }
   technologies: string[];
   category: string;
   githubUrl?: string;
