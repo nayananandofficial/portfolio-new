@@ -32,8 +32,8 @@ export default function Hero() {
               Nayan B Anand
             </h1>
             <p className="text-lg text-white/80">Full Stack Developer</p>
-            <p className="text-base text-white/65 max-w-2xl mx-auto">
-              I build production-ready web apps with clean architecture, scalable APIs, and real-world workflows.
+            <p className="text-base italic text-white/65 max-w-lg mx-auto">
+              I build complete web products, from interface to database, that actually work in the real world.
             </p>
           </div>
 

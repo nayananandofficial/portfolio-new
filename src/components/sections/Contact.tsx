@@ -1,14 +1,15 @@
 'use client';
 
-import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import EmailLink from './EmailLink';
 import { SOCIAL_LINKS } from '@/lib/constants';
 
 const socialLinks = [
-  { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, Icon: Linkedin },
-  { label: 'GitHub', href: SOCIAL_LINKS.github, Icon: Github },
-  { label: 'X', href: SOCIAL_LINKS.x, Icon: Twitter },
-  { label: 'Instagram', href: SOCIAL_LINKS.instagram, Icon: Instagram },
+  { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, Icon: FaLinkedin },
+  { label: 'GitHub', href: SOCIAL_LINKS.github, Icon: FaGithub },
+  { label: 'X', href: SOCIAL_LINKS.x, Icon: FaXTwitter },
+  { label: 'Instagram', href: SOCIAL_LINKS.instagram, Icon: FaInstagram },
 ];
 
 export default function Contact() {
@@ -32,9 +33,9 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/75 hover:border-[#9fe870]/45 hover:text-[#9fe870]"
+                className="text-xs inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/75 hover:border-[#9fe870]/45 hover:text-[#9fe870]"
               >
-                <Icon size={18} />
+                <Icon size={28} />
               </a>
             ))}
           </div>
