@@ -1,6 +1,6 @@
 'use client';
 
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import EmailLink from './EmailLink';
 import { SOCIAL_LINKS } from '@/lib/constants';
@@ -14,30 +14,44 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="glass-card rounded-3xl px-6 py-10 md:px-10 text-center">
+    <section id="contact" className="page-wrap page-section pb-20">
+      <div className="surface-card rounded-[2rem] px-5 py-8 md:px-8 md:py-10">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr),minmax(280px,0.85fr)] lg:items-end">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white">
-              Get in touch
+            <p className="section-label">Contact</p>
+            <h2 className="section-heading">
+              Let&apos;s build something sharp, useful, and ready to ship.
             </h2>
+            <p className="section-copy max-w-2xl">
+              If you&apos;re building a product, tightening an interface, or need
+              a full-stack developer who can carry an idea from concept to working
+              delivery, I&apos;m open to the conversation.
+            </p>
             <EmailLink />
-            <p className="text-sm text-white/55">or find me on</p>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-4">
-            {socialLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-xs inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/75 hover:border-[#9fe870]/45 hover:text-[#9fe870]"
-              >
-                <Icon size={28} />
-              </a>
-            ))}
+          <div className="surface-panel rounded-[1.8rem] p-5">
+            <div className="space-y-4">
+              <p className="section-label">Find Me Online</p>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--foreground)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)]"
+                  >
+                    <Icon size={20} />
+                  </a>
+                ))}
+              </div>
+              <p className="text-sm leading-7 text-[color:var(--muted)]">
+                Available for product collaborations, freelance builds, and
+                thoughtful frontend-plus-backend work.
+              </p>
+            </div>
           </div>
         </div>
       </div>

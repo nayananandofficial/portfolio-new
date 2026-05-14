@@ -2,8 +2,13 @@ import { Project } from "@/types";
 
 export const NAV_LINKS = [
   { name: "Home", href: "/#home" },
-  { name: "About", href: "/#about" },
-  { name: "Projects", href: "/#projects" },
+  { name: "About", href: "/about" },
+  { name: "My Work", href: "/#projects" },
+  {
+    name: "Resume",
+    href: "https://docs.google.com/document/d/portfolio-resume-placeholder/edit",
+    external: true,
+  },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -17,19 +22,20 @@ export const SOCIAL_LINKS = {
 };
 
 export const PROJECTS: Project[] = [
+
   {
-    id: "4",
-    slug: "adaptive-task-manager",
-    title: "Adaptive Task Manager",
+    id: "1",
+    slug: "fluxoboard",
+    title: "FluxoBoard | Adaptive Task Manager",
     description:
       "Trello-style Kanban system with real-time persistence and structured state management.",
     longDescription:
       "Trello-style Kanban task manager supporting Boards → Lists → Cards → Subtasks with persistent backend storage.\nBuilt using React (Vite) and Supabase (PostgreSQL) with a layered architecture (UI → Context → Services → DB).\nImplements drag-and-drop task management, optimistic UI updates, and normalized relational data models for scalable workflows.",
-    video: {url: "/videos/Fluxoboardvid.mp4", poster: "/images/fluxoPoster.png"},
-    image: "/images/fluxo.png",
+    video: {url: "/videos/fluxoboard/Fluxoboardvid.mp4", poster: "/images/fluxoPoster.png"},
+    image: "/images/fluxoboard/fluxo.png",
     images: [
-      "/images/fluxo1.png",
-      "/images/fluxo2.png",
+      "/images/fluxoboard/fluxo1.png",
+      "/images/fluxoboard/fluxo2.png",
     ],
     technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS"],
     category: "Full Stack Web Application",
@@ -49,66 +55,38 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "1",
-    slug: "business-dashboard",
-    title: "Business Dashboard MVP",
-    description:
-      "Admin dashboard for structured CRUD workflows and internal data management.",
-    longDescription:
-      "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
-    image: "/images/business-dashboard.png",
-    video: {url: "", poster: ""},
-    images: [
-      "/images/business-dashboard-1.jpg",
-      "/images/business-dashboard-2.jpg",
-    ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    category: "Web Application (Admin Dashboard)",
-    githubUrl: "https://github.com/nayananandofficial/business-dashboard.git",
-    liveUrl: "https://business-dashboard-neon-eight.vercel.app",
-    features: [
-      "Dashboard table view for structured operational record management",
-      "Create, edit, and delete workflows with immediate UI updates",
-      "Page-based admin flow connecting dashboard, create, and edit views",
-    ],
-    enggdecs: [
-      "Centralized form state for predictable record updates",
-      "Modeled data structures to match backend-ready CRUD patterns",
-      "Kept UI components modular to enable future API integration",
-    ],
-  },
-  {
     id: "2",
-    slug: "southspice",
-    title: "SouthSpice - Restaurant Ordering System (Demo)",
+    slug: "meteor",
+    title: "METEOR | Enterprise HPC Site",
     description:
-      "Restaurant ordering system with cart state management and backend-ready architecture.",
+      "Immersive marketing platform for a high-performance computing brand featuring fluid motion and deep product cataloging.",
     longDescription:
-      "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
-    video: {url: "", poster: ""},
-    image: "/images/southspice.png",
-    images: ["/images/southspice-1.png", "/images/southspice-2.png"],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Web Speech API",
+      "A premium brand experience built for enterprise HPC hardware visibility.\nLeveraged Framer Motion to create a high-fidelity 'meteor' aesthetic with smooth scroll-triggered transitions.\nArchitected a comprehensive product routing system to manage complex technical specifications across processors, GPUs, and AI platforms.",
+    image: "/images/meteor/meteor-img1.webp", // Use a high-quality screenshot
+    video: {
+      url: "https://github.com/user-attachments/assets/3a2ce7bf-5dd8-48d6-a2b9-6833eca789a7", 
+      poster: "/images/meteor/meteor-img1.webp"
+    },
+    images: [
+      "/images/meteor/meteor-img2.webp",
+      "/images/meteor/meteor-img3.webp",
+      "/images/meteor/meteor-img4.webp"
     ],
-    category: "Web Application UI (Demo)",
-    githubUrl: "https://github.com/Visuals-Smart-Tech/SOUTHSPICE.git",
-    liveUrl: "https://www.southspice.visualstech.in/",
+    technologies: ["React", "Vite", "Framer Motion", "Tailwind CSS", "React Router"],
+    category: "Marketing Site (Enterprise Tech)",
+    githubUrl: "https://github.com/nayananandofficial/METEOR", 
+    liveUrl: "https://meteor-hpc.netlify.app/",
     features: [
-      "Dynamic menu browsing with category-based restaurant item discovery",
-      "Cart management with quantity updates and aggregated order state",
-      "End-to-end ordering flow from menu selection to checkout screen",
+      "Dynamic multi-level routing for detailed hardware product specs",
+      "Immersive brand storytelling pages for manufacturing and AI narratives",
+      "Fully responsive architecture tested for mobile performance",
     ],
     enggdecs: [
-      "Centralized cart state to maintain consistent order data across views",
-      "Structured mock API responses to match backend-ready contracts",
-      "Designed responsive layout to support stable ordering across devices",
+      "Utilized Framer Motion variants for orchestrated entry animations",
+      "Implemented a centralized redirect strategy for seamless SPA routing on Netlify",
+      "Optimized production build with Gzip/Brotli compression for fast asset delivery",
     ],
-  },
+},
   {
     id: "3",
     slug: "speakmind",
@@ -141,4 +119,67 @@ export const PROJECTS: Project[] = [
       "Managed frontend state transitions for listening, processing, and playback phases",
     ],
   },
+  {
+    id: "4",
+    slug: "business-dashboard",
+    title: "Business Dashboard MVP",
+    description:
+      "Admin dashboard for structured CRUD workflows and internal data management.",
+    longDescription:
+      "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
+    image: "/images/business-dashboard.png",
+    video: {url: "", poster: ""},
+    images: [
+      "/images/business-dashboard-1.jpg",
+      "/images/business-dashboard-2.jpg",
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    category: "Web Application (Admin Dashboard)",
+    githubUrl: "https://github.com/nayananandofficial/business-dashboard.git",
+    liveUrl: "https://business-dashboard-neon-eight.vercel.app",
+    features: [
+      "Dashboard table view for structured operational record management",
+      "Create, edit, and delete workflows with immediate UI updates",
+      "Page-based admin flow connecting dashboard, create, and edit views",
+    ],
+    enggdecs: [
+      "Centralized form state for predictable record updates",
+      "Modeled data structures to match backend-ready CRUD patterns",
+      "Kept UI components modular to enable future API integration",
+    ],
+  },
+  {
+    id: "5",
+    slug: "southspice",
+    title: "SouthSpice - Restaurant Ordering System (Demo)",
+    description:
+      "Restaurant ordering system with cart state management and backend-ready architecture.",
+    longDescription:
+      "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
+    video: {url: "", poster: ""},
+    image: "/images/southspice.png",
+    images: ["/images/southspice-1.png", "/images/southspice-2.png"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Web Speech API",
+    ],
+    category: "Web Application UI (Demo)",
+    githubUrl: "https://github.com/Visuals-Smart-Tech/SOUTHSPICE.git",
+    liveUrl: "https://www.southspice.visualstech.in/",
+    features: [
+      "Dynamic menu browsing with category-based restaurant item discovery",
+      "Cart management with quantity updates and aggregated order state",
+      "End-to-end ordering flow from menu selection to checkout screen",
+    ],
+    enggdecs: [
+      "Centralized cart state to maintain consistent order data across views",
+      "Structured mock API responses to match backend-ready contracts",
+      "Designed responsive layout to support stable ordering across devices",
+    ],
+  },
+  
+  
 ];

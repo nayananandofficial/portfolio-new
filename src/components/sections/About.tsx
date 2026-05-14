@@ -1,16 +1,15 @@
-
 const blocks = [
   {
-    title: 'What I Build',
-    body: `Complete web applications : From the interface a user sees to the database storing their data. I'm comfortable across the full stack and I build things end to end, not just the front or back in isolation.`
+    title: "What I Build",
+    body: `Complete web applications : From the interface a user sees to the database storing their data. I'm comfortable across the full stack and I build things end to end, not just the front or back in isolation.`,
   },
   {
-    title: 'How I Solve Problems',
-    body: `I start by understanding what the product actually needs to do, then I work backwards into the architecture. I'd rather build the right thing simply than the wrong thing with complexity.`
+    title: "How I Solve Problems",
+    body: `I start by understanding what the product actually needs to do, then I work backwards into the architecture. I'd rather build the right thing simply than the wrong thing with complexity.`,
   },
   {
-    title: 'What I Deliver',
-    body: `Working, deployed applications with clean code structure and maintainable architecture. Not prototypes. Not demos. Things that run.`
+    title: "What I Deliver",
+    body: `Working, deployed applications with clean code structure and maintainable architecture. Not prototypes. Not demos. Things that run.`,
   },
 ];
 
@@ -23,10 +22,18 @@ Database (PostgreSQL / Supabase)
 Deployment (Vercel / Render)`;
 
 const aboutScript = [
-{line: `I'm self-taught, which means everything I know came from building real things, breaking them, and figuring out why.`},
-{line: `I started with curiosity and ended up with a full stack - React, Next.js, Node.js, PostgreSQL, Supabase, not from courses, but from projects that needed to actually work.`},
-{line: `I care about how things look and how they function equally. That's rare for a backend-comfortable developer, and it's why I gravitate toward building complete products rather than isolated features.`},
-{line: `Right now I&apos;m focused on building tools that solve real problems, not just things that look good in a portfolio.`}
+  {
+    line: `I'm self-taught, which means everything I know came from building real things, breaking them, and figuring out why.`,
+  },
+  {
+    line: `I started with curiosity and ended up with a full stack - React, Next.js, Node.js, PostgreSQL, Supabase, not from courses, but from projects that needed to actually work.`,
+  },
+  {
+    line: `I care about how things look and how they function equally. That's rare for a backend-comfortable developer, and it's why I gravitate toward building complete products rather than isolated features.`,
+  },
+  {
+    line: `Right now I&apos;m focused on building tools that solve real problems, not just things that look good in a portfolio.`,
+  },
 ];
 
 export default function About() {
@@ -85,7 +92,8 @@ export default function About() {
               Currently building
             </p>
             <p className="text-white/75 leading-relaxed italic">
-              SocialFlow — a cross-platform content scheduling tool for creators.
+              SocialFlow — a cross-platform content scheduling tool for
+              creators.
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
-import { CONTACT_EMAIL, SOCIAL_LINKS } from '@/lib/constants';
+import { CONTACT_EMAIL, NAV_LINKS, SOCIAL_LINKS } from '@/lib/constants';
 
 const socialLinks = [
   { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, Icon: Linkedin },
@@ -11,33 +11,48 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="py-10 px-4">
-      <div className="glass-card max-w-4xl mx-auto px-4 py-6 rounded-2xl">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <footer className="page-wrap pb-8">
+      <div className="surface-card rounded-[1.8rem] px-5 py-6 md:px-6">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="space-y-2">
-            <p className="text-white font-semibold">Nayan Anand</p>
-            <p className="text-sm text-white/60">
-              Building focused full-stack products with clean frontend,
-              backend, and data workflows.
+            <p className="text-lg font-semibold tracking-[-0.05em] text-[color:var(--foreground)]">
+              Nay4n
+            </p>
+            <p className="max-w-xl text-sm leading-7 text-[color:var(--muted)]">
+              Building focused full-stack products with strong interfaces, clean
+              architecture, and a light-first portfolio experience.
             </p>
           </div>
 
-          <div className="space-y-3">
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/65">
-              <Link href="/#about" className="hover:text-[#9fe870]">
-                About
-              </Link>
-              <Link href="/#projects" className="hover:text-[#9fe870]">
-                Projects
-              </Link>
-              <Link href="/#contact" className="hover:text-[#9fe870]">
-                Contact
-              </Link>
+          <div className="space-y-4 md:text-right">
+            <div className="flex flex-wrap gap-4 text-sm text-[color:var(--muted)] md:justify-end">
+              {NAV_LINKS.filter((link) => link.name !== 'Home').map((link) =>
+                link.external ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[color:var(--foreground)]"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="hover:text-[color:var(--foreground)]"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+
+            <div className="flex flex-wrap items-center gap-3 md:justify-end">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-white/65 hover:text-[#9fe870]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--foreground)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)]"
                 aria-label="Email"
               >
                 <Mail size={18} />
@@ -48,7 +63,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/65 hover:text-[#9fe870]"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--foreground)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)]"
                   aria-label={label}
                 >
                   <Icon size={18} />

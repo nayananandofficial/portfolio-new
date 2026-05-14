@@ -21,6 +21,7 @@ export interface Project {
 export interface NavLink {
   name: string;
   href: string;
+  external?: boolean;
 }
 
 export interface ContactFormData {

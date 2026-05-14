@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import { PROJECTS } from '@/lib/constants';
 import type { Metadata } from 'next';
 
@@ -36,10 +36,12 @@ export async function generateMetadata({
       title: project.title,
       description: project.description,
       images: [project.image],
-      videos: project.video?.url ? {
-        url: project.video.url,
-        type: 'video/mp4',
-      } : undefined,
+      videos: project.video?.url
+        ? {
+            url: project.video.url,
+            type: 'video/mp4',
+          }
+        : undefined,
       type: 'article',
     },
   };
@@ -81,180 +83,164 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="py-16 pt-32">
-        <div className="max-w-4xl mx-auto px-4 space-y-8">
-          <div className="space-y-6 text-center">
-            <div className="text-left">
-              <Link
-                href="/#projects"
-                className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-[#9fe870]"
-              >
-                <ArrowLeft size={16} />
-                Back to Projects
-              </Link>
-            </div>
+      <section className="page-wrap page-section pt-32 md:pt-36">
+        <div className="space-y-6 md:space-y-8">
+          <div className="space-y-5">
+            <Link
+              href="/#projects"
+              className="button-text"
+            >
+              <ArrowLeft size={16} />
+              Back to My Work
+            </Link>
 
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-semibold text-white">
-                {project.title}
-              </h1>
-              <p className="text-base text-white/65 max-w-2xl mx-auto">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 px-3 py-1 text-sm text-white/75"
-                  >
-                    {tech}
+            <div className="surface-card rounded-[2rem] p-6 md:p-8">
+              <div className="space-y-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="hero-chip">{project.category}</span>
+                  <span className="eyebrow text-xs text-[color:var(--muted-soft)]">
+                    Technical Notes
                   </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap justify-center gap-3">
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#9fe870] px-5 py-2.5 text-sm font-medium text-[#09110d] hover:bg-[#b4f58b]"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/12 px-5 py-2.5 text-sm font-medium text-white/80 hover:border-white/30 hover:text-white"
-                  >
-                    <Github size={16} />
-                    View Code
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.65fr),minmax(280px,1fr)] gap-5 items-start">
-            <div className="glass-card rounded-2xl p-3">
-              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                <video
-                  src={project.video?.url || ''}
-                  poster={project.video?.poster || project.image}
-                  autoPlay
-                  loop
-                  muted
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
-
-            <aside className="glass-card rounded-2xl p-6 space-y-6">
-              <div className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.24em] text-white/45">
-                  Technical Details
-                </p>
-                <div className="space-y-3 text-sm text-white/70 leading-relaxed">
-                  {technicalSummary.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
                 </div>
-              </div>
 
-              <div className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.24em] text-white/45">
-                  Tools & Technologies
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="space-y-4">
+                  <h1 className="section-heading max-w-4xl">{project.title}</h1>
+                  <p className="max-w-3xl text-[1rem] leading-8 text-[color:var(--muted)] md:text-[1.08rem]">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2.5">
                   {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/75"
-                    >
+                    <span key={tech} className="hero-chip">
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-3">
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#9fe870] px-5 py-2.5 text-sm font-medium text-[#09110d] hover:bg-[#b4f58b]"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
+                <div className="flex flex-wrap gap-3">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button-primary"
+                    >
+                      Live Demo
+                      <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button-secondary"
+                    >
+                      <Github size={16} />
+                      View Code
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1.6fr),minmax(280px,0.95fr)] lg:items-start">
+            <div className="surface-card rounded-[2rem] p-3 md:p-4">
+              <div className="relative aspect-video overflow-hidden rounded-[1.4rem] border border-[color:var(--line)] bg-[color:var(--background-strong)]">
+                {project.video?.url ? (
+                  <video
+                    src={project.video.url}
+                    poster={project.video.poster || project.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
                 )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 px-5 py-2.5 text-sm font-medium text-white/80 hover:border-white/30 hover:text-white"
-                  >
-                    <Github size={16} />
-                    View Code
-                  </a>
-                )}
+              </div>
+            </div>
+
+            <aside className="surface-card rounded-[2rem] p-6">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <p className="section-label">Technical</p>
+                  <div className="space-y-3 text-sm leading-7 text-[color:var(--muted)]">
+                    {technicalSummary.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <p className="section-label">Tools</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="hero-chip">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </aside>
           </div>
 
-          <div className="glass-card rounded-2xl p-6 space-y-4">
-            <h2 className="text-2xl font-semibold text-white">
-              Project Overview
-            </h2>
-            <div className="space-y-3 text-white/70 leading-relaxed">
-              {overviewLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+          <div className="surface-card rounded-[2rem] p-6 md:p-8">
+            <div className="space-y-4">
+              <p className="section-label">Overview</p>
+              <div className="space-y-3 text-[1rem] leading-8 text-[color:var(--muted)]">
+                {overviewLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid gap-5 md:grid-cols-2">
             {project.features.length > 0 && (
-              <div className="glass-card rounded-2xl p-6">
-                <h2 className="text-2xl font-semibold text-white mb-4">
-                  Key Features
-                </h2>
-                <ul className="space-y-3 text-white/70 leading-relaxed">
+              <div className="surface-card rounded-[2rem] p-6 md:p-7">
+                <p className="section-label">Key Features</p>
+                <div className="mt-4 space-y-3">
                   {project.features.map((feature) => (
-                    <li key={feature}>- {feature}</li>
+                    <p key={feature} className="text-[0.98rem] leading-7 text-[color:var(--muted)]">
+                      {feature}
+                    </p>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
 
             {project.enggdecs.length > 0 && (
-              <div className="glass-card rounded-2xl p-6">
-                <h2 className="text-2xl font-semibold text-white mb-4">
-                  Engineering Decisions
-                </h2>
-                <ul className="space-y-3 text-white/70 leading-relaxed">
+              <div className="surface-card rounded-[2rem] p-6 md:p-7">
+                <p className="section-label">Engineering Decisions</p>
+                <div className="mt-4 space-y-3">
                   {project.enggdecs.map((decision) => (
-                    <li key={decision}>- {decision}</li>
+                    <p key={decision} className="text-[0.98rem] leading-7 text-[color:var(--muted)]">
+                      {decision}
+                    </p>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>
 
           {project.images.length > 0 && (
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white text-center">
-                Project Gallery
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <p className="section-label">Gallery</p>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {project.images.map((image, index) => (
-                  <div key={image} className="glass-card rounded-2xl p-3">
-                    <div className="relative h-44 overflow-hidden rounded-xl border border-white/10 bg-white/5">
+                  <div key={image} className="surface-card rounded-[1.8rem] p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.3rem] border border-[color:var(--line)] bg-[color:var(--background-strong)]">
                       <Image
                         src={image}
                         alt={`${project.title} gallery image ${index + 1}`}
