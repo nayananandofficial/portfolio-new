@@ -96,8 +96,8 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Real-time voice interaction system handling speech-to-text, LLM processing, and text-to-speech output\nBuilt with a Node.js and Express backend to process async voice requests and manage response flow\nEngineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks",
     video: {url: "", poster: ""},
-    image: "/images/speakmind.png",
-    images: ["/images/speakmind-1.png", "/images/speakmind-2.jpg"],
+    image: "/images/speakmind/speakmind.png",
+    images: ["/images/speakmind/speakmind-1.png", "/images/speakmind/speakmind-2.jpg"],
     technologies: [
       "React",
       "Node.js",
@@ -127,11 +127,11 @@ export const PROJECTS: Project[] = [
       "Admin dashboard for structured CRUD workflows and internal data management.",
     longDescription:
       "Structured CRUD admin system for managing internal operational records\nBuilt with Next.js and TypeScript for predictable record workflows and table-based management\nDesigned modular state and reusable components to support scalable admin operations",
-    image: "/images/business-dashboard.png",
+    image: "/images/business-dashboard/business-dashboard.png",
     video: {url: "", poster: ""},
     images: [
-      "/images/business-dashboard-1.jpg",
-      "/images/business-dashboard-2.jpg",
+      "/images/business-dashboard/business-dashboard-1.jpg",
+      "/images/business-dashboard/business-dashboard-2.jpg",
     ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     category: "Web Application (Admin Dashboard)",
@@ -157,8 +157,8 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Restaurant ordering system simulating real-world menu to cart to checkout flow\nBuilt with React and TypeScript using structured state management for order handling\nDesigned mock API layers and reusable data models to mirror production backend behavior",
     video: {url: "", poster: ""},
-    image: "/images/southspice.png",
-    images: ["/images/southspice-1.png", "/images/southspice-2.png"],
+    image: "/images/southspice/southspice.png",
+    images: ["/images/southspice/southspice-1.png", "/images/southspice/southspice-2.png"],
     technologies: [
       "React",
       "TypeScript",
