@@ -4,6 +4,18 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SOCIAL_LINKS } from "@/lib/constants";
+
+const socialLinks = [
+  { label: "LinkedIn", href: SOCIAL_LINKS.linkedin, Icon: FaLinkedin },
+  { label: "GitHub", href: SOCIAL_LINKS.github, Icon: FaGithub },
+  { label: "X", href: SOCIAL_LINKS.x, Icon: FaXTwitter },
+  { label: "Instagram", href: SOCIAL_LINKS.instagram, Icon: FaInstagram },
+];
+
+export const CONTACT_EMAIL = "anandanayanofficial@gmail.com";
 
 const techStack = [
   "React",
@@ -109,12 +121,31 @@ export default function Hero() {
                 </p>
 
                 <p className="max-w-2xl text-[1.02rem] leading-8 text-[color:var(--muted)] md:text-[1.12rem]">
-                  You can find my resume{" "} <Link
+                  You can find my resume{" "}
+                  <Link
                     href="/#projects"
                     className="underline font-bold text-blue-500"
                   >
                     here
                   </Link>
+                </p>
+
+                <h2 className="text-2xl py-2">📧 Contact</h2>
+
+                <p className="max-w-2xl text-[1.02rem] leading-8 text-[color:var(--muted)] md:text-[1.12rem]">
+                  You can contact me on:
+                  {socialLinks.map(({ label, href, Icon }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="mx-2 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--foreground)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent-strong)]"
+                    >
+                      <Icon size={20} />
+                    </a>
+                  ))}
                 </p>
               </div>
             </div>
@@ -131,7 +162,7 @@ export default function Hero() {
           </div>
 
           <div className="space-y-4">
-            <div className="surface-card rounded-[1.8rem] p-4">
+            {/* <div className="surface-card rounded-[1.8rem] p-4">
               <div className="relative mx-auto aspect-[4/4.8] w-full max-w-[18rem] overflow-hidden rounded-[1.6rem] border border-[color:var(--line)] bg-[color:var(--background-strong)]">
                 <Image
                   src="/profile(2).png"
@@ -141,9 +172,9 @@ export default function Hero() {
                   className="object-cover"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="surface-card rounded-[1.8rem] p-5">
+            {/* <div className="surface-card rounded-[1.8rem] p-5">
               <div className="space-y-3">
                 <p className="section-label">Technical Stack</p>
                 <div className="flex flex-wrap gap-2.5">
@@ -154,7 +185,7 @@ export default function Hero() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
