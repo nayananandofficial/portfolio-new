@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -15,16 +15,16 @@ const socialLinks = [
   { label: "Instagram", href: SOCIAL_LINKS.instagram, Icon: FaInstagram },
 ];
 
-export const CONTACT_EMAIL = "anandanayanofficial@gmail.com";
+// export const CONTACT_EMAIL = "anandanayanofficial@gmail.com";
 
-const techStack = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "Supabase",
-  "PostgreSQL",
-];
+// const techStack = [
+//   "React",
+//   "Next.js",
+//   "Node.js",
+//   "TypeScript",
+//   "Supabase",
+//   "PostgreSQL",
+// ];
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);

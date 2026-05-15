@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
       "Real-time voice interaction system handling speech-to-text, LLM processing, and text-to-speech output\nBuilt with a Node.js and Express backend to process async voice requests and manage response flow\nEngineered modular API services, validation, and state handling to maintain smooth conversation without latency breaks",
     video: {url: "", poster: ""},
     image: "/images/speakmind/speakmind.png",
-    images: ["/images/speakmind/speakmind-1.png", "/images/speakmind/speakmind-2.jpg"],
+    images: ["/images/speakmind/speakmind-1.png"],
     technologies: [
       "React",
       "Node.js",
