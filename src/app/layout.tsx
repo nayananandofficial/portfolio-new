@@ -32,11 +32,11 @@ const themeScript = `
 export const metadata: Metadata = {
   metadataBase: new URL("https://nay4n.vercel.app/"),
   title: {
-    default: "Nayan B Anand | Full-Stack Developer",
+    default: "Nayan B Anand | Software Developer",
     template: "%s | Nayan B Anand",
   },
   description:
-    "Modern full-stack developer portfolio showcasing product-driven web apps, UI/UX design, and clean frontend-to-backend solutions.",
+    "Modern software developer portfolio showcasing product-driven web apps, UI/UX design, and clean frontend-to-backend solutions.",
   keywords: [
     "Nayan B Anand",
     "software developer",
@@ -74,6 +74,7 @@ export const metadata: Metadata = {
       "Modern software developer portfolio showcasing product-driven web apps, UI/UX design, and clean frontend-to-backend solutions.",
     images: ["https://nay4n.vercel.app/profile(2).png"],
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
