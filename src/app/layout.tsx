@@ -3,6 +3,7 @@ import { Doto, Outfit } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const outfit = Outfit({
@@ -92,6 +93,7 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-1FM1Z35RX7" />
     </html>
   );
 }
