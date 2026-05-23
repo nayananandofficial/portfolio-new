@@ -3,11 +3,8 @@ import { Doto, Outfit } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-<<<<<<< HEAD
 import { GoogleAnalytics } from '@next/third-parties/google';
-=======
 import { SpeedInsights } from "@vercel/speed-insights/next";
->>>>>>> af5f26bc6389714829deddc632d6583f8d7dd32e
 import "./globals.css";
 
 const outfit = Outfit({

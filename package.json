@@ -9,11 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@next/third-parties": "^16.2.6",
-=======
     "@vercel/speed-insights": "^2.0.0",
->>>>>>> af5f26bc6389714829deddc632d6583f8d7dd32e
     "clsx": "^2.1.1",
     "lucide-react": "^0.546.0",
     "next": "^15.5.14",
