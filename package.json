@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@next/third-parties": "^16.2.6",
-    "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.546.0",
     "next": "^15.5.14",
