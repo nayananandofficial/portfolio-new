@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SOCIAL_LINKS } from "@/lib/constants";
+import { SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
 
 const socialLinks = [
   { label: "LinkedIn", href: SOCIAL_LINKS.linkedin, Icon: FaLinkedin },
@@ -14,6 +14,8 @@ const socialLinks = [
   { label: "X", href: SOCIAL_LINKS.x, Icon: FaXTwitter },
   { label: "Instagram", href: SOCIAL_LINKS.instagram, Icon: FaInstagram },
 ];
+
+const navlink = {label: "Resume", href: NAV_LINKS[3].href, Icon: ArrowRight};
 
 // export const CONTACT_EMAIL = "anandanayanofficial@gmail.com";
 
@@ -122,12 +124,14 @@ export default function Hero() {
 
                 <p className="max-w-2xl text-[1.02rem] leading-8 text-[color:var(--muted)] md:text-[1.12rem]">
                   You can find my resume{" "}
-                  <Link
-                    href="/#projects"
+                  {navlink.href && (
+                    <Link
+                      href={navlink.href}
                     className="underline font-bold text-blue-500"
                   >
                     here
                   </Link>
+                  )}
                 </p>
 
                 <h2 className="text-2xl py-2">📧 Contact</h2>

@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { name: "My Work", href: "/#projects" },
   {
     name: "Resume",
-    href: "https://docs.google.com/document/d/portfolio-resume-placeholder/edit",
+    href: "https://docs.google.com/document/d/194KKAOX1v8vjmr5ZxxO_iw_dAlI9vCMVRNK2RULc6r0/edit?tab=t.0",
     external: true,
   },
   { name: "Contact", href: "/#contact" },
